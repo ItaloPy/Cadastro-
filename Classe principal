@@ -1,0 +1,98 @@
+package projeto;
+
+import javax.swing.JOptionPane;
+
+
+public class avaliacao {
+    
+    public static void main(String[] args) {
+        
+        JOptionPane entrada= new JOptionPane();
+        String novo;
+        Pessoa pessoa_nova= new Pessoa();
+        Pessoa cliente[] = new Pessoa[2]; 
+        int max = 0,i=1;
+        
+        while (i==1) {
+        int opcao=0;
+        
+        opcao = Integer.parseInt(
+                JOptionPane.showInputDialog(
+                "Digite a opção:"
+                + "\n 1- Cadastra "
+                + "\n 2- Consultar "
+                + "\n 3- Atualizar "
+                + "\n 4- Excluir"
+                + "\n 5- Listar"
+                + "\n 6- sair"));
+       
+        switch (opcao) {
+        case 1: ;
+        break;
+        case 2: consulta();
+        break;
+        /*
+        case 3: atualiza();
+        break;
+        case 4: exclui();
+        break;
+        case 5: lista();
+        break;
+        case 6: sair();
+        break;
+        */
+        default:
+            JOptionPane.showMessageDialog(entrada, "Opção Inválida");
+        }
+    
+    
+
+ if (opcao==1) {
+    
+     if(max < 2){
+            novo = JOptionPane.showInputDialog("Digite seu nome:");
+            pessoa_nova.setNome(novo);
+            
+            novo = JOptionPane.showInputDialog("Digite seu email:");
+            pessoa_nova.setEmail(novo);
+            
+            novo = JOptionPane.showInputDialog("Crie um codigo de identificação:");
+            pessoa_nova.setCodigo(novo);
+            
+            novo = JOptionPane.showInputDialog("Informe sua cidade:");
+            pessoa_nova.setCidade(novo);
+            
+            novo =  JOptionPane.showInputDialog ("informe se estado (ex:MG):");
+            pessoa_nova.setUf(novo);
+            
+            JOptionPane.showMessageDialog(null, "Sucesso!!");
+            
+            cliente[max]=pessoa_nova;
+            max++;
+        }
+     
+     else {
+         JOptionPane.showMessageDialog(null, "Lista de cadastro cheia!");
+         }
+        
+      }
+    }
+   }
+
+    public static void consulta() {
+        String code;
+        code =JOptionPane.showInputDialog("Informe o codigo a ser pesquisado");
+        
+        if (code==Pessoa.codigo) {
+            JOptionPane.showMessageDialog(null,Pessoa.codigo); 
+            JOptionPane.showMessageDialog(null,Pessoa.nome);
+            JOptionPane.showMessageDialog(null,Pessoa.email);
+            JOptionPane.showMessageDialog(null,Pessoa.cidade);
+            JOptionPane.showMessageDialog(null,Pessoa.uf);
+        }
+        else {JOptionPane.showMessageDialog(null,"Codigo não cadastrado");}
+            
+    }        
+}
+
+
