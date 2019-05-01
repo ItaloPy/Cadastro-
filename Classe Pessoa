@@ -1,0 +1,48 @@
+package projeto;
+
+public class Pessoa {
+    public static String codigo ;
+    public static String nome   ;
+    public static String email  ;
+    public static String cidade ;
+    public static String uf     ;
+    
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        Pessoa.nome = nome;
+    }
+    
+    
+    public String getCodigo() {
+        return codigo;
+    }
+    public void setCodigo(String codigo) {
+        Pessoa.codigo = codigo;
+    }
+    
+    
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        Pessoa.email = email;
+    }
+    
+    
+    public String getCidade() {
+        return cidade;
+    }
+    public void setCidade(String cidade) {
+            Pessoa.cidade = cidade;
+    }
+    
+    
+    public String getUf() {
+        return uf;
+    }
+    public void setUf(String uf) {
+        Pessoa.uf = uf; 
+    }
+}
